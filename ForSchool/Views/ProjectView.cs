@@ -176,6 +176,22 @@ namespace ForSchool.Views
                     e.Handled = true;
                 }
             };
+
+            ProjectTxt.KeyPress += (s, e) =>
+            {
+                // Проверка, является ли символ цифрой
+                if (char.IsDigit(e.KeyChar))
+                {
+                    // Отменяем ввод, если символ — цифра
+                    e.Handled = true;
+                }
+
+                // Разрешаем стандартные символы, такие как Backspace
+                if (e.KeyChar == (char)Keys.Back)
+                {
+                    e.Handled = false;
+                }
+            };
         }
 
         public void SetProjectBindingSource(BindingSource source)

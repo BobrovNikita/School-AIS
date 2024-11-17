@@ -237,7 +237,7 @@ namespace ForSchool.Controllers
         {
             try
             {
-                var model = (FunctionalityViewModel)studentBindingSource.Current;
+                var model = (FunctionalityViewModel)functionalityBindingSource.Current;
 
                 _repository.Delete(model);
                 _view.IsSuccessful = true;
@@ -253,7 +253,7 @@ namespace ForSchool.Controllers
 
         private void LoadSelectedToEdit(object? sender, EventArgs e)
         {
-            var model = (FunctionalityViewModel)studentBindingSource.Current;
+            var model = (FunctionalityViewModel)functionalityBindingSource.Current;
             _view.Id = model.Id;
             _view.ProjectId.Id = model.ProjectId;
             _view.StudentId.Id = model.StudentId;

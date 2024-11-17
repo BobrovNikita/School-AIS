@@ -180,8 +180,55 @@ namespace ForSchool.Views
                     e.Handled = true;
                 }
             };
-        }
 
+            SurnameTxt.KeyPress += (s, e) =>
+            {
+                // Проверка, является ли символ цифрой
+                if (char.IsDigit(e.KeyChar))
+                {
+                    // Отменяем ввод, если символ — цифра
+                    e.Handled = true;
+                }
+
+                // Разрешаем стандартные символы, такие как Backspace
+                if (e.KeyChar == (char)Keys.Back)
+                {
+                    e.Handled = false;
+                }
+            };
+
+            NameTxt.KeyPress += (s, e) =>
+            {
+                // Проверка, является ли символ цифрой
+                if (char.IsDigit(e.KeyChar))
+                {
+                    // Отменяем ввод, если символ — цифра
+                    e.Handled = true;
+                }
+
+                // Разрешаем стандартные символы, такие как Backspace
+                if (e.KeyChar == (char)Keys.Back)
+                {
+                    e.Handled = false;
+                }
+            };
+
+            LastNameTxt.KeyPress += (s, e) =>
+            {
+                // Проверка, является ли символ цифрой
+                if (char.IsDigit(e.KeyChar))
+                {
+                    // Отменяем ввод, если символ — цифра
+                    e.Handled = true;
+                }
+
+                // Разрешаем стандартные символы, такие как Backspace
+                if (e.KeyChar == (char)Keys.Back)
+                {
+                    e.Handled = false;
+                }
+            };
+        }
         public void SetClassBindingSource(BindingSource source)
         {
             ClassCmb.DataSource = source;
